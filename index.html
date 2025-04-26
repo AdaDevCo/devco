@@ -47,7 +47,7 @@
     .progress-bar-fill {
       height: 20px;
       background: #4caf50;
-      width: 65%;
+      width: 25%;
       text-align: center;
       color: white;
       line-height: 20px;
@@ -91,10 +91,10 @@
     }
     .timeline {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       margin: 40px 0;
+      flex-wrap: wrap;
       gap: 10px;
     }
     .timeline .step {
@@ -128,7 +128,17 @@
     .timeline .step .label {
       font-size: 0.8rem;
       text-align: center;
-      max-width: 80px;
+      max-width: 100px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .connector {
+      width: 40px;
+      height: 4px;
+      background-color: #ccc;
+      align-self: center;
     }
     footer {
       text-align: center;
@@ -148,7 +158,7 @@
     "¡Buen trabajo, equipo Quantum! Vuestro código ha superado todos los tests. Seguís avanzando con paso firme hacia el nivel Mid Developer. - Ada"
   </div>
   <div class="progress-bar">
-    <div class="progress-bar-fill">65% Completado</div>
+    <div class="progress-bar-fill">25% Completado</div>
   </div>
 </header>
 
@@ -194,13 +204,21 @@
 
 <section class="timeline">
   <div class="step complete"><div class="circle">1</div><div class="label">Instancia y conquista</div></div>
+  <div class="connector"></div>
   <div class="step complete"><div class="circle">2</div><div class="label">Métodos en acción</div></div>
+  <div class="connector"></div>
   <div class="step pending"><div class="circle">3</div><div class="label">Nivel PRO con constructores</div></div>
+  <div class="connector"></div>
   <div class="step failed"><div class="circle">4</div><div class="label">El poder de las librerías</div></div>
+  <div class="connector"></div>
   <div class="step pending"><div class="circle">5</div><div class="label">A prueba de bugs</div></div>
+  <div class="connector"></div>
   <div class="step pending"><div class="circle">6</div><div class="label">Crea tu propia clase</div></div>
+  <div class="connector"></div>
   <div class="step pending"><div class="circle">7</div><div class="label">Herencia desbloqueada</div></div>
+  <div class="connector"></div>
   <div class="step pending"><div class="circle">8</div><div class="label">Clases dentro de clases</div></div>
+  <div class="connector"></div>
   <div class="step pending"><div class="circle">9</div><div class="label">Abstractízate</div></div>
 </section>
 
