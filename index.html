@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevCo - Panel de Progreso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #333;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    header img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: #0057b7;
+    }
+    .level {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+    .feedback {
+      background: #e8f5e9;
+      border-left: 5px solid #66bb6a;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 15px 0;
+      font-style: italic;
+    }
+    .progress-bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .progress-bar-fill {
+      height: 20px;
+      background: #4caf50;
+      width: 65%;
+      text-align: center;
+      color: white;
+      line-height: 20px;
+      font-size: 0.9rem;
+    }
+    .progress-table, .badges {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #eaf0f6;
+    }
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .badge {
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      border-radius: 10px;
+      padding: 10px 15px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .timeline {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 40px 0;
+      gap: 10px;
+    }
+    .timeline .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      margin: 10px;
+    }
+    .timeline .step .circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 8px;
+    }
+    .timeline .step.complete .circle {
+      background-color: #4caf50;
+    }
+    .timeline .step.pending .circle {
+      background-color: #ff9800;
+    }
+    .timeline .step.failed .circle {
+      background-color: #f44336;
+    }
+    .timeline .step .label {
+      font-size: 0.8rem;
+      text-align: center;
+      max-width: 80px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/Ada_Lovelace_Chalon_portrait.jpg" alt="Ada Lovelace">
+  <h1>DevCo - Panel de Progreso</h1>
+  <div class="level">Nivel actual: <strong>Mid Developer</strong></div>
+  <div class="feedback">
+    "¡Buen trabajo, equipo Quantum! Vuestro código ha superado todos los tests. Seguís avanzando con paso firme hacia el nivel Mid Developer. - Ada"
+  </div>
+  <div class="progress-bar">
+    <div class="progress-bar-fill">65% Completado</div>
+  </div>
+</header>
+
+<section class="progress-table">
+  <h2>Estado de Misiones</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Reto</th>
+        <th>Descripción</th>
+        <th>Estado</th>
+        <th>Puntuación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Misión 1</td>
+        <td>Instanciar y manipular objetos básicos</td>
+        <td>✅ Superado</td>
+        <td>95/100</td>
+      </tr>
+      <tr>
+        <td>Misión 2</td>
+        <td>Uso de métodos y corrección de estilo</td>
+        <td>✅ Superado</td>
+        <td>88/100</td>
+      </tr>
+      <tr>
+        <td>Misión 3</td>
+        <td>Diseño e implementación de constructores</td>
+        <td>⚠️ Pendiente</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <td>Misión 4</td>
+        <td>Integración de librerías externas</td>
+        <td>❌ No superado</td>
+        <td>40/100</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="timeline">
+  <div class="step complete"><div class="circle">1</div><div class="label">Instancia y conquista</div></div>
+  <div class="step complete"><div class="circle">2</div><div class="label">Métodos en acción</div></div>
+  <div class="step pending"><div class="circle">3</div><div class="label">Nivel PRO con constructores</div></div>
+  <div class="step failed"><div class="circle">4</div><div class="label">El poder de las librerías</div></div>
+  <div class="step pending"><div class="circle">5</div><div class="label">A prueba de bugs</div></div>
+  <div class="step pending"><div class="circle">6</div><div class="label">Crea tu propia clase</div></div>
+  <div class="step pending"><div class="circle">7</div><div class="label">Herencia desbloqueada</div></div>
+  <div class="step pending"><div class="circle">8</div><div class="label">Clases dentro de clases</div></div>
+  <div class="step pending"><div class="circle">9</div><div class="label">Abstractízate</div></div>
+</section>
+
+<section class="badges">
+  <h2>Insignias Desbloqueadas</h2>
+  <div class="badge-list">
+    <div class="badge">🧼 Clean Coder</div>
+    <div class="badge">🧪 Test Hero</div>
+    <div class="badge">👥 Team Player</div>
+  </div>
+</section>
+
+<footer>
+  DevCo - Mentora: Ada | Inspirado en Ada Lovelace
+</footer>
+
+</body>
+</html>
